@@ -68,5 +68,8 @@ ZYGOTE_FORCE_64 := true
 # Force any prefer32 targets to be compiled as 64 bit.
 IGNORE_PREFER32_ON_DEVICE := true
 
+# SPL
+VENDOR_SECURITY_PATCH := 2025-02-01
+
 # Inherit the proprietary files
 include vendor/motorola/vicky/BoardConfigVendor.mk

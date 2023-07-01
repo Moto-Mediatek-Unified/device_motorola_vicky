@@ -138,5 +138,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 BOOT_SECURITY_PATCH := 2025-02-01
 VENDOR_SECURITY_PATCH := 2025-02-01
 
+# Verified Boot
+BOARD_AVB_ENABLE := true
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+
 # Inherit the proprietary files
 include vendor/motorola/vicky/BoardConfigVendor.mk

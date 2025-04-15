@@ -10,6 +10,21 @@ KERNEL_PATH := device/motorola/vicky-kernel
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
+# A/B
+AB_OTA_UPDATER := true
+AB_OTA_PARTITIONS := \
+    boot \
+    odm \
+    odm_dlkm \
+    product \
+    system \
+    system_ext \
+    vbmeta \
+    vbmeta_system \
+    vendor \
+    vendor_boot \
+    vendor_dlkm
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a-dotprod
@@ -81,12 +96,13 @@ BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_SUPER_PARTITION_SIZE := 7969177600
 BOARD_SUPER_PARTITION_GROUPS := mtk_dynamic_partitions
 
-BOARD_MTK_DYNAMIC_PARTITIONS_PARTITION_LIST := product system system_ext vendor vendor_dlkm
+BOARD_MTK_DYNAMIC_PARTITIONS_PARTITION_LIST := odm odm_dlkm product system system_ext vendor vendor_dlkm
 BOARD_MTK_DYNAMIC_PARTITIONS_SIZE := 7964983296
 
 BOARD_EROFS_PCLUSTER_SIZE := 262144
 
 BOARD_USES_METADATA_PARTITION := true
+BOARD_USES_ODM_DLKMIMAGE := true
 BOARD_USES_VENDOR_DLKMIMAGE := true
 
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -95,6 +111,8 @@ BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := ext4
 
+TARGET_COPY_OUT_ODM := odm
+TARGET_COPY_OUT_ODM_DLKM := odm_dlkm
 TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_SYSTEM := system
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext

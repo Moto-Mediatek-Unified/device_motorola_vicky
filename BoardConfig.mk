@@ -33,6 +33,7 @@ BOARD_RAMDISK_OFFSET := 0x66f00000
 
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 TARGET_FORCE_PREBUILT_KERNEL := true
 BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtb
